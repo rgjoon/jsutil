@@ -42,11 +42,11 @@ var makeTree = function(o) {
 
 						if( $child.css('display') === 'block' ) {
 							$(this).text('+');
-							$child.css('display', 'none');
+							$child.slideUp(100);
 						}
 						else {
 							$(this).text('-');
-							$child.css('display', 'block');
+							$child.slideDown(100);
 						}
 					};
 				})($category)).mouseenter(function() {
