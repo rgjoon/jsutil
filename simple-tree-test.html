@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>simple-tree-test</title>
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.js"></script>
+		<script type="text/javascript" src="simple-tree-0.1.js"></script>
+		<script type="text/javascript">
+
+			$(function() {
+				var tree = new SimpleTree();
+
+				tree.append($('#tree-div'));
+				tree.load({
+				  items : [
+				    {
+				      title : 'Menu 1'
+				    },
+				    {
+				      title : 'Menu 2',
+				      child : [
+				        {
+				          title : 'Subtitle 1'
+				        },
+				        {
+				          title : 'Subtitle 2'
+				        },
+				        {
+				          title : 'Subtitle 3',
+				          child : [
+				            {
+				              title : 'Item 1'
+				            },
+				            {
+				              title : 'Item 2'
+				            }
+				          ]
+				        }
+				      ]
+				    },
+				    {
+				      title : 'Menu 3'
+				    }
+				  ],
+				  select : function(data) {
+				    console.log('select', data);
+				  }
+				});
+			});
+
+		</script>
+	</head>
+	<body>
+		<div id="tree-div" style="display:inline-block;width:100px;height:200px;background-color:#ddd"></div>
+	</body>
+</html>
