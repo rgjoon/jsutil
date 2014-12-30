@@ -1,4 +1,4 @@
-var makeTree = function(o) {
+function SimpleTree(o) {
 	var base = o || {};
 	var makeLevel = function(data) {
 		for( var i = 0; i < (data.items || []).length; i++ ) {
@@ -65,7 +65,7 @@ var makeTree = function(o) {
 		}
 	}
 
-	base.$root = $('<div></div>');
+	base.$root = $('<div style="overflow:auto"></div>');
 
 	return {
 		append : function($root) {
