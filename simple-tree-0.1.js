@@ -5,8 +5,8 @@ function SimpleTree(o) {
 			var $category = $([
 				'<div>',
 					'<div>',
-						'<div class="switch" style="float:left;padding:10px"></div>',
-						'<div class="tree-menu" style="margin-left:20px;padding:10px">',
+						'<div class="switch" style="float:left;padding:5px"></div>',
+						'<div class="tree-menu" style="margin-left:20px;padding:5px;">',
 							data.items[i].title,
 						'</div>',
 					'</div>',
@@ -24,14 +24,12 @@ function SimpleTree(o) {
 			})(data.items[i])).mouseenter(function() {
 				$(this).css({
 					'cursor' : 'pointer',
-					'text-decoration' : 'underline',
-					'background-color' : '#eee'
+					'text-decoration' : 'underline'
 				});
 			}).mouseleave(function() {
 				$(this).css({
 					'cursor' : 'auto',
-					'text-decoration' : 'none',
-					'background-color' : 'none'
+					'text-decoration' : 'none'
 				});
 			});
 
@@ -65,7 +63,7 @@ function SimpleTree(o) {
 		}
 	}
 
-	base.$root = $('<div style="overflow:auto"></div>');
+	base.$root = $('<div style="overflow:auto;width:100%;height:100%;margin:0;padding:0"></div>');
 
 	return {
 		append : function($root) {
@@ -73,7 +71,7 @@ function SimpleTree(o) {
 		}, 
 
 		load : function(data) {
-			base.items = data.items || [];
+			base.items = (data || {}).items || [];
 
 			base.$root.empty();
 			makeLevel({
