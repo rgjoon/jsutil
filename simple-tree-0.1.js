@@ -5,8 +5,8 @@ function SimpleTree(o) {
 			var $category = $([
 				'<div>',
 					'<div>',
-						'<div class="switch" style="float:left;padding:5px"></div>',
-						'<div class="tree-menu" style="margin-left:20px;padding:5px;">',
+						'<div class="switch" style="float:left;padding:5px;"></div>',
+						'<div class="tree-menu" style="margin-left:20px;padding:5px;white-space:nowrap">',
 							data.items[i].title,
 						'</div>',
 					'</div>',
